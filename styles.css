@@ -11,3 +11,22 @@
     align-items: center;
     background-color: maroon;
  }
+ .scoreboard {
+   display:flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   padding-top: 10rem;
+ }
+
+ .choiceboard {
+   display:flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   padding-top: 20%;
+ }
+ 
+ .misc-text {
+   display:flex;
+   justify-content: center;
+   padding-top: 7.5%;
+ }
