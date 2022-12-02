@@ -6,7 +6,7 @@
     <title>Janken!</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href="styles.css">
-    <script src='script.js'></script>
+    
 </head>
 
 <body>
@@ -27,11 +27,15 @@
  <button id="s" class="choice">Choki</button></button>
 </div>
 
-    <p class="misc-text">BEGIN!</p>
+    <p id="begin">BEGIN!</p>
 
- <div class="final">
- </div>
+ <div class="result">
+    <p id="op1" style="display:none">Round Won!</p>
+    <p2 id="op2" style="display:none">Round Lost!</p2>
+    <p3 id="op3" style="display:none">Round Draw!</p3>
+</div>
+ 
 
-    
+ <script src='script.js' charset="utf-8"></script>
 </body>
 </html>
