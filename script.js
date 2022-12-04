@@ -21,8 +21,10 @@ const randomNumber = Math.floor(Math.random() * 3);
 return choices[randomNumber];
 }
 
-function convertToWord() {
-    if ("r") return "Guu";
+function convertToWord(letter) {
+    if ( letter === "r") return "Guu";
+    if ( letter === "p") return "Paa";
+    return "Choki";
  }
  
 
@@ -30,21 +32,33 @@ function win(userChoice, botChoice) {
     userScore++;
     userScore_span.innerHTML = userScore;
     botScore_span.innerHTML = botScore;
-    begin.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(botChoice)}`;
+    const smallUserWord = "YOU".fontsize(3).sup();
+    const smallBotWord = "OPPONENT".fontsize(3).sup();
+    begin.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(botChoice)}${smallBotWord}`;
 }
 
 function lose(userChoice, botChoice) {
     botScore++;
     userScore_span.innerHTML = userScore;
     botScore_span.innerHTML = botScore;
+    const smallUserWord = "YOU".fontsize(3).sup();
+    const smallBotWord = "OPPONENT".fontsize(3).sup();
     begin.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(botChoice)}`;
    
 }
 function draw(userChoice, botChoice) {
+    const smallUserWord = "YOU".fontsize(3).sup();
+    const smallBotWord = "OPPONENT".fontsize(3).sup();
     begin.innerHTML = `${convertToWord(userChoice)} equals ${convertToWord(botChoice)}`;
 }
 
 
+function resetIfOver(){
+    if(userScore >= 5 || botScore >= 5){
+        userScore = 0;
+        botScore = 0;
+    }
+}
 
 function game(userChoice) {
     const botChoice = getBotChoice();
