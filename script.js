@@ -16,7 +16,7 @@ let text3 = document.getElementById("op3");
 
 
 function getBotChoice() {
-const choices = ['r','p','s'];
+const choices = ["r","p","s"];
 const randomNumber = Math.floor(Math.random() * 3);
 return choices[randomNumber];
 }
@@ -34,7 +34,7 @@ function win(userChoice, botChoice) {
     botScore_span.innerHTML = botScore;
     const smallUserWord = "YOU".fontsize(3).sup();
     const smallBotWord = "OPPONENT".fontsize(3).sup();
-    begin.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(botChoice)}${smallBotWord}`;
+    begin.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(botChoice)}`;
 }
 
 function lose(userChoice, botChoice) {
@@ -70,7 +70,7 @@ case "sp":
     break;
 case "rp":
 case "ps":
-case "ss":
+case "sp":
     lose(userChoice + botChoice);
     break;
 case "rr":
