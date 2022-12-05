@@ -1,3 +1,9 @@
+ 
+  @font-face {
+    src: url(fonts/karasuma_gothic/KarasumaGothic-Bold.otf);
+    font-family:kara-gothic;
+  }
+
  * {
     margin:0;
     padding:0;
@@ -5,32 +11,64 @@
  }
 
  header {
-    border: 4px solid;
     display:flex;
     flex-direction: column;
     align-items: center;
     background-color: maroon;
+    font-family: kara-gothic;
+    font-size: large;
  }
  .scoreboard {
    display:flex;
    flex-direction: row;
+   align-items: center;
    justify-content: space-evenly;
-   padding-top: 10rem;
+   position: fixed 100px;
+   margin-top: 5rem;
+   padding: 20px;
+   font-family: kara-gothic;
+   font-weight: bold;
+   font-size: 45px;
+   border: 5px double;
+   border-left: none;
+   border-right: none;
+   overflow: auto;
  }
-
+ .scoreboard p {
+  padding-left: 40px;
+ }
+.user {
+  padding-left: 5%;
+}
  .choiceboard {
    display:flex;
    flex-direction: row;
    justify-content: space-evenly;
-   padding-top: 20%;
+   padding-top: 5%;
  }
  
   #begin{
    display:flex;
    justify-content: center;
-   padding-top: 7.5%;
+   padding-top: 4%;
+   font-family: dot-gothic;
+   font-weight: bold;
+   font-size: 45px;
  }
- .choice:hover {
+ .choicecard {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  border-radius: 15px;
+  border: solid 7px;
+ }
+img {
+    object-fit: cover;
+    width: 235px;
+    height: 335px;
+    border-radius: 5px;
+ }
+ .choicecard:hover {
    cursor: pointer;
  }
  .result {
