@@ -4,6 +4,11 @@
     font-family:kara-gothic;
   }
 
+  @font-face {
+    src: url(fonts/dotgothic16/fonts/ttf/DotGothic16-Regular.ttf);
+    font-family:dot-gothic;
+  }
+
  * {
     margin:0;
     padding:0;
@@ -14,28 +19,34 @@
     display:flex;
     flex-direction: column;
     align-items: center;
-    background-color: maroon;
-    font-family: kara-gothic;
+    background-color: #9c1e37;
+    font-family: dot-gothic;
     font-size: large;
+    border-bottom: #000 solid 4px;
+ }
+ .Ptext {
+  display:flex;
+  justify-content: center;
+  font-family: dot-gothic;
+  font-size: 45px;
+  padding-top: 4.5%;
  }
  .scoreboard {
    display:flex;
    flex-direction: row;
    align-items: center;
    justify-content: space-evenly;
-   position: fixed 100px;
-   margin-top: 5rem;
+   position: fixed 80px;
    padding: 20px;
    font-family: kara-gothic;
-   font-weight: bold;
    font-size: 45px;
-   border: 5px double;
+   border: 4px solid;
    border-left: none;
    border-right: none;
-   overflow: auto;
+   background-image: linear-gradient(107deg,#9c1e37 49.55%, #fff 47%);
  }
  .scoreboard p {
-  padding-left: 40px;
+  padding-left: 50px;
  }
 .user {
   padding-left: 5%;
@@ -50,31 +61,27 @@
   #begin{
    display:flex;
    justify-content: center;
-   padding-top: 4%;
+   padding-top: 3.3%;
    font-family: dot-gothic;
-   font-weight: bold;
    font-size: 45px;
  }
  .choicecard {
   position: relative;
-  width: 250px;
-  height: 350px;
+  width: 190px;
+  height: 290px;
   border-radius: 15px;
-  border: solid 7px;
+  border: solid 7px #000;
  }
 img {
     object-fit: cover;
-    width: 235px;
-    height: 335px;
+    width: 177px;
+    height: 276px;
     border-radius: 5px;
  }
  .choicecard:hover {
    cursor: pointer;
+   transform: scale(1.1);
  }
- .result {
-  display: flex;
-  justify-content:center;
-  align-items: center;
-  padding-top: 6rem;
-  flex-direction:column;
- }
+  body {
+background-color:#edb44a;
+  }

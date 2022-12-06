@@ -1,75 +1,71 @@
 let userScore = 0;
 let botScore = 0;
+const beginning = document.getElementById("begin");
+const guuOp = document.getElementById("r");
+const paaOp = document.getElementById("p");
+const chokiOp = document.getElementById("s");
 const userScore_span = document.getElementById("user-score");
 const botScore_span = document.getElementById("bot-score");
-const scoreBoard_div = document.querySelector(".scoreboard");
-let result = document.querySelector(".result > p");
-const beginning = document.getElementById("begin");
-let guu_div = document.getElementById("r");
-let paa_div = document.getElementById("p");
-let choki_div = document.getElementById("s");
 
-function game() {
-    for (let i =0; i < 5; i++) {
-        if (userScore || botScore == 5) {
-            return winnerPrompt();
-        }
-    }
+function getComputerChoice() {
+    const choices = ['r','p','s'];
+    const randNum = Math.floor(Math.random() * choices.length);
+    return choices [randNum];
 }
-function winnerPrompt() {
-    
+function convertToWord(letter) {
+  if (letter === "r") return "Guu";
+  if (letter === "p") return "Paa";
+  return "Choki";
 }
 
-function getBotChoice() {
-const choices = ["r","p","s"];
-const randomNumber = Math.floor(Math.random() * choices.length);
-return choices[randomNumber];
+function win(userChoice, computerChoice) {
+    userScore++;
+    userScore_span.innerHTML = userScore;
+    botScore_span.innerHTML = botScore;
+    beginning.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}`
+}
+function loss(userChoice, computerChoice) {
+  botScore++;
+  userScore_span.innerHTML = userScore;
+  botScore_span.innerHTML = botScore;
+  beginning.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(computerChoice)}`
+}
+function draw(userChoice, computerChoice) {
+beginning.innerHTML = `${convertToWord(userChoice)} equals ${convertToWord(computerChoice)}`
 }
 
-function checkWinner(playerSelection, computerSelection) {
-    if(playerSelection == computerSelection) {
-           return "ROUND DRAW!"
-    }
-    else if ((playerSelection == "r" && computerSelection == "s" ||
-            playerSelection == "s" && computerSelection == "p" ||
-            playerSelection == "p" && computerSelection == "r") 
-    ){
-        userScore++;
-        return "You"; 
-    }
-        else {
-            botScore++;
-            return "Opponent"
-        }
-    }
-function playRound(playerSelection, computerSelection) {
-        const result = checkWinner(playerSelection, computerSelection);
-    if (result == "ROUND DRAW!") {
-        "ROUND DRAW!!!"
-    }
-    else if (result == "You") {
-        return beginning.innerHTML = `ROUND WON!!! ${playerSelection} defeats ${computerSelection}`
-    }
-        else {
-         return beginning.innerHTML = `ROUND LOST!!! ${computerSelection} defeats ${playerSelection}`
-        }
-    }
-
-
+function game(userChoice) {
+  const computerChoice = getComputerChoice();
+  switch (userChoice + computerChoice) {
+    case "rs":
+      case "pr":
+        case "sp":
+          win(userChoice,computerChoice);
+          break;
+    case "rp":
+      case "ps":
+        case "sr":
+          loss(userChoice,computerChoice);
+          break;
+    case "rr":
+      case "pp":
+        case "ss":
+          draw(userChoice,computerChoice);
+          break;
+  }
+}
 game();
-
 function main() {
-
-    guu_div.addEventListener('click', function(){
-    playRound("r")
+    guuOp.addEventListener('click', function(){
+    game("r")
     })
 
-    paa_div.addEventListener('click', function(){
-        playRound("p");
+    paaOp.addEventListener('click', function(){
+    game("p");
     })
 
-    choki_div.addEventListener('click', function(){
-        playRound("s");
+    chokiOp.addEventListener('click', function(){
+    game("s");
     })
-}
-main();    
+}   
+main();
