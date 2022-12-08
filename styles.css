@@ -19,58 +19,65 @@
     display:flex;
     flex-direction: column;
     align-items: center;
-    background-color: #9c1e37;
+    background-color: #ede326;
     font-family: dot-gothic;
-    font-size: large;
-    border-bottom: #000 solid 4px;
+    font-size: 17px;
+    border-bottom: #000 solid 6px;
  }
  .Ptext {
   display:flex;
   justify-content: center;
   font-family: dot-gothic;
   font-size: 45px;
-  padding-top: 4.5%;
+  font-weight: bold;
+  padding-top: 4%;
  }
  .scoreboard {
    display:flex;
    flex-direction: row;
    align-items: center;
    justify-content: space-evenly;
-   position: fixed 80px;
+   position: absolute 100px;
    padding: 20px;
    font-family: kara-gothic;
    font-size: 45px;
-   border: 4px solid;
+   border: 6px solid;
    border-left: none;
    border-right: none;
-   background-image: linear-gradient(107deg,#9c1e37 49.55%, #fff 47%);
+   background-image: linear-gradient(107deg, #0022FF 49.8%, #ba0b0b 49.8%);
+   overflow: hidden;
  }
  .scoreboard p {
   padding-left: 50px;
+  color: #fff;
+  -webkit-text-stroke: 4px #000;
+  
  }
 .user {
   padding-left: 5%;
 }
+
  .choiceboard {
    display:flex;
    flex-direction: row;
    justify-content: space-evenly;
-   padding-top: 5%;
+   padding-top: 2rem;
  }
  
   #begin{
    display:flex;
    justify-content: center;
-   padding-top: 3.3%;
    font-family: dot-gothic;
    font-size: 45px;
+   font-weight: bold;
+   overflow: hidden;
  }
  .choicecard {
-  position: relative;
   width: 190px;
   height: 290px;
   border-radius: 15px;
-  border: solid 7px #000;
+  border: solid 7px ;
+  overflow: hidden;
  }
 img {
     object-fit: cover;
@@ -82,6 +89,24 @@ img {
    cursor: pointer;
    transform: scale(1.1);
  }
+ .middle{
+padding-top: 4rem;
+ }
+ button {
+  border: 5px solid;
+  border-radius: 10px;
+  padding: 15px;
+  font-family: dot-gothic;
+  font-size: 1.4em;
+  font-weight: bold;
+  word-spacing: 1px;
+  background-color: #ede326;
+ }
+button:hover{
+  cursor: pointer;
+   transform: scale(1.1);
+}
   body {
-background-color:#edb44a;
+background-color:#1c8031;
+text-align: center;
   }

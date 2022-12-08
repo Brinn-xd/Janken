@@ -5,6 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Janken!</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" href="jankenimg/hand-emoji-by-twitter.png">
     <link rel='stylesheet' type='text/css' media='screen' href="styles.css">
     
 </head>
@@ -25,7 +26,7 @@
 
     <p id="begin">BEGIN!</p>
     
-    <div class="choiceboard">
+    <div style="pointer-events: all;" class="choiceboard">
 <div class="choicecard">
  <img id="r" src="jankenimg/1501948.jpg" alt="guu">
 </div>
@@ -37,6 +38,9 @@
 </div>
 </div>
 
+<div class="middle">
+<button style="display: none;">REMATCH?</button>
+</div>
  <script src='script.js' charset="utf-8"></script>
 </body>
 </html>
