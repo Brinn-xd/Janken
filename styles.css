@@ -36,7 +36,7 @@
    display:flex;
    flex-direction: row;
    align-items: center;
-   justify-content: space-evenly;
+   justify-content: space-between;
    position: absolute 100px;
    padding: 20px;
    font-family: kara-gothic;
@@ -44,17 +44,18 @@
    border: 6px solid;
    border-left: none;
    border-right: none;
-   background-image: linear-gradient(107deg, #0022FF 49.8%, #ba0b0b 49.8%);
+   -webkit-text-stroke: 2.3px #000;
+   background-image: linear-gradient(101deg, #0022FF 50%, #ba0b0b 50%);
    overflow: hidden;
  }
  .scoreboard p {
-  padding-left: 50px;
   color: #fff;
-  -webkit-text-stroke: 4px #000;
-  
  }
 .user {
-  padding-left: 5%;
+  padding-left: 11%;
+}
+.user .bot , #bot-score, #user-score {
+  color:#fff
 }
 
  .choiceboard {
@@ -63,7 +64,9 @@
    justify-content: space-evenly;
    padding-top: 2rem;
  }
- 
+ #user-score {
+  padding-left: 5%;
+ }
   #begin{
    display:flex;
    justify-content: center;
@@ -110,3 +113,78 @@ button:hover{
 background-color:#1c8031;
 text-align: center;
   }
+
+  @media only screen and (max-width: 768px) {
+    .scoreboard  {
+      font-size: 43px;
+      -webkit-text-stroke: 2px #000;
+    }
+  }
+  @media only screen and (max-width: 642px) {
+    .scoreboard {
+      font-size: 35px;
+      -webkit-text-stroke: 1.7px #000;
+    }
+  }
+  @media only screen and (max-width: 565px) {
+    .scoreboard {
+      font-size: 30px;
+      -webkit-text-stroke: 1.5px #000;
+      
+    }
+    .choicecard {
+      width: 95px;
+      height: 145px;
+      border-radius: 10px;
+      border: solid 4px ;
+      overflow: hidden;
+     }
+     img {
+      object-fit: cover;
+      width: 88.5px;
+      height: 138px;
+      border-radius: 5px;
+   }
+  }
+  @media only screen and (max-width: 520px) {
+    .scoreboard {
+      font-size: 25px;
+      -webkit-text-stroke: 1.5px #000;
+      
+    }
+  }
+    @media only screen and (max-width: 375px) {
+      .scoreboard {
+        font-size: 25px;
+        -webkit-text-stroke: 1.5px #000;
+        
+      }
+      .user {
+        padding-right:2%;
+      }
+      #bot-score {
+        padding-left: 10%;
+      }
+      .Ptext {
+        font-size: 22.5px;
+      }
+      #begin{
+        display:flex;
+        justify-content: center;
+        font-family: dot-gothic;
+        font-size: 22.5px;
+        font-weight: bold;
+        overflow: hidden;
+      }
+      button {
+        border: 4px solid;
+        border-radius: 5px;
+        padding: 7.5px;
+        font-family: dot-gothic;
+        font-size: 1em;
+        font-weight: bold;
+        background-color: #ede326;
+       }
+      
+    }
+  
